@@ -1,0 +1,13 @@
+{
+  "packages": [
+    "packages/*",
+    "config/*",
+    "lab"
+  ],
+  "command": {
+    "publish": {
+      "conventionalCommits": true
+    }
+  },
+  "version": "0.0.0"
+}
