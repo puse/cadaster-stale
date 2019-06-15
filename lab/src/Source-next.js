@@ -10,8 +10,14 @@ const config = {
   maxPatternLength: 32,
   minMatchCharLength: 3,
   keys: [
-    'properties.address'
+    'properties.name',
+    'properties.label'
   ]
+}
+
+function search (docs, address) {
+  return new Fuse(docs, config)
+    .search(address)
 }
 
 class _Source {
@@ -20,32 +26,7 @@ class _Source {
   }
 
   search (address) {
-    const idx = new Fuse(this.features, config)
-
-    const recover = result => {
-      const {
-        id,
-        geometry: {
-          coordinates: position
-        },
-        properties: {
-          address
-        }
-      } = result.item
-
-      const score = 1 - result.score
-
-      return {
-        id,
-        position,
-        address,
-        score
-      }
-    }
-
-    return idx
-      .search(address)
-      .map(recover)
+    return search(this.features, address)
   }
 }
 

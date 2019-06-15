@@ -12,7 +12,8 @@ const A = {
     coordinates: [ -104.677422, 39.06047 ]
   },
   properties: {
-    address: 'Black Forest, CO, USA'
+    name: 'Black Forest',
+    label: 'Black Forest, CO, USA'
   }
 }
 
@@ -24,7 +25,8 @@ const B = {
     coordinates: [ -7.815218, 52.679012 ]
   },
   properties: {
-    address: 'Black Castle, Thurles, Ireland'
+    name: 'Black Castle',
+    label: 'Black Castle, Thurles, Ireland'
   }
 }
 
@@ -36,7 +38,8 @@ const C = {
     coordinates: [ 17.876543, 59.951621 ]
   },
   properties: {
-    address: 'Black Castle, Rasbo, Sweden'
+    name: 'Black Castle',
+    label: 'Black Castle, Rasbo, Sweden'
   }
 }
 
@@ -48,7 +51,8 @@ const D = {
     coordinates: [ -80.901872, 26.736239 ]
   },
   properties: {
-    address: 'Red Road, Hendry County, FL, USA'
+    name: 'Red Road',
+    label: 'Red Road, Hendry County, FL, USA'
   }
 }
 
