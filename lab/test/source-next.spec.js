@@ -68,3 +68,16 @@ test('signature', t => {
   const results = source.search('black forest')
   t.true(Array.isArray(results))
 })
+
+test('config', async t => {
+  const features = [A, B, C, D]
+  const address = 'black forest'
+
+  const xs0 = Source({ features })
+    .search(address)
+  t.is(xs0.length, 3)
+
+  const xs1 = Source({ features, config: { threshold: 0.3 } })
+    .search(address)
+  t.is(xs1.length, 1)
+})

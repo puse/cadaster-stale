@@ -1,6 +1,8 @@
 const Fuse = require('fuse.js')
 
-const config = {
+const R = require('ramda')
+
+const FUSE_CONFIG_DEFAULT = {
   shouldSort: true,
   includeScore: true,
   includeMatches: true,
@@ -15,20 +17,55 @@ const config = {
   ]
 }
 
-function search (docs, address) {
+// helpers
+
+/**
+ * Safely get `features` array from given `Context`
+ *
+ * @param {Context} ctx
+ *
+ * @return {Array<Feature>}
+ */
+
+const featuresFrom = R.propOr([], 'features')
+
+/**
+ * Safely get `config` object from given `Context`
+ *
+ * @param {Context} ctx
+ *
+ * @return {Config}
+ */
+
+const configFrom = R.compose(
+  R.mergeRight(FUSE_CONFIG_DEFAULT),
+  R.propOr({}, 'config')
+)
+
+// methods
+
+function search (ctx, address) {
+  const docs = featuresFrom(ctx)
+  const config = configFrom(ctx)
+
   return new Fuse(docs, config)
     .search(address)
 }
 
+// class constructor
+
 class _Source {
-  constructor (source = {}) {
-    this.features = source.features || []
+  constructor (opts) {
+    this.config = opts.config
+    this.features = opts.features
   }
 
   search (address) {
-    return search(this.features, address)
+    return search(this, address)
   }
 }
+
+// constructor
 
 function Source (opts) {
   return new _Source(opts)

@@ -10,6 +10,7 @@
     "test": "ava -v"
   },
   "dependencies": {
-    "fuse.js": "^3.4.5"
+    "fuse.js": "^3.4.5",
+    "ramda": "^0.26.1"
   }
 }
