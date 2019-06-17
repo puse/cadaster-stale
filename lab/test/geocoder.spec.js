@@ -4,57 +4,9 @@ import Geocoder from '../src/Geocoder'
 
 // assets
 
-const A = {
-  type: 'Feature',
-  id: 'A',
-  geometry: {
-    type: 'Point',
-    coordinates: [ -104.677422, 39.06047 ]
-  },
-  properties: {
-    name: 'Black Forest',
-    label: 'Black Forest, CO, USA'
-  }
-}
+const DATA = require('./abcd.geo.json')
 
-const B = {
-  type: 'Feature',
-  id: 'B',
-  geometry: {
-    type: 'Point',
-    coordinates: [ -7.815218, 52.679012 ]
-  },
-  properties: {
-    name: 'Black Castle',
-    label: 'Black Castle, Thurles, Ireland'
-  }
-}
-
-const C = {
-  type: 'Feature',
-  id: 'C',
-  geometry: {
-    type: 'Point',
-    coordinates: [ 17.876543, 59.951621 ]
-  },
-  properties: {
-    name: 'Black Castle',
-    label: 'Black Castle, Rasbo, Sweden'
-  }
-}
-
-const D = {
-  type: 'Feature',
-  id: 'D',
-  geometry: {
-    type: 'Point',
-    coordinates: [ -80.901872, 26.736239 ]
-  },
-  properties: {
-    name: 'Red Road',
-    label: 'Red Road, Hendry County, FL, USA'
-  }
-}
+const [ A, B, C, D ] = DATA.features
 
 // helpers
 
