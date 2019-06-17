@@ -2,6 +2,8 @@ const Fuse = require('fuse.js')
 
 const R = require('ramda')
 
+// Standard config
+
 const FUSE_CONFIG_DEFAULT = {
   shouldSort: true,
   includeScore: true,
@@ -54,7 +56,7 @@ function search (ctx, address) {
 
 // class constructor
 
-class _Source {
+class _Geocoder {
   constructor (opts) {
     this.config = opts.config
     this.features = opts.features
@@ -67,8 +69,8 @@ class _Source {
 
 // constructor
 
-function Source (opts) {
-  return new _Source(opts)
+function Geocoder (opts) {
+  return new _Geocoder(opts)
 }
 
-module.exports = Source
+module.exports = Geocoder
