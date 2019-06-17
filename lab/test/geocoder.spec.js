@@ -6,30 +6,35 @@ import Geocoder from '../src/Geocoder'
 
 const DATA = require('./abcd.geo.json')
 
-const [ A, B, C, D ] = DATA.features
-
-// helpers
-
 // hooks
 
-test('signature', t => {
+test('signature', async t => {
   t.is(typeof Geocoder, 'function')
 
-  const source = Geocoder({ features: [A, B, C, D] })
+  const data = DATA
 
-  const results = source.search('black forest')
-  t.true(Array.isArray(results))
+  const address = 'black forest'
+
+  await Geocoder({ data })
+    .search({ address })
+    .then(results => {
+      t.true(Array.isArray(results))
+    })
 })
 
 test('config', async t => {
-  const features = [A, B, C, D]
+  const data = DATA
   const address = 'black forest'
 
-  const xs0 = Geocoder({ features })
-    .search(address)
-  t.is(xs0.length, 3)
+  await Geocoder({ data })
+    .search({ address })
+    .then(results => {
+      t.is(results.length, 3)
+    })
 
-  const xs1 = Geocoder({ features, config: { threshold: 0.3 } })
-    .search(address)
-  t.is(xs1.length, 1)
+  await Geocoder({ data, config: { threshold: 0.3 } })
+    .search({ address })
+    .then(results => {
+      t.is(results.length, 1)
+    })
 })

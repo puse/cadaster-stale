@@ -29,7 +29,7 @@ const FUSE_CONFIG_DEFAULT = {
  * @return {Array<Feature>}
  */
 
-const featuresFrom = R.propOr([], 'features')
+const dataFrom = R.pathOr([], ['data', 'features'])
 
 /**
  * Safely get `config` object from given `Context`
@@ -46,12 +46,15 @@ const configFrom = R.compose(
 
 // methods
 
-function search (ctx, address) {
-  const docs = featuresFrom(ctx)
+function search (ctx, query) {
+  const docs = dataFrom(ctx)
   const config = configFrom(ctx)
 
-  return new Fuse(docs, config)
-    .search(address)
+  const { address } = query
+
+  const results = new Fuse(docs, config).search(address)
+
+  return Promise.resolve(results)
 }
 
 // class constructor
@@ -59,11 +62,11 @@ function search (ctx, address) {
 class _Geocoder {
   constructor (opts) {
     this.config = opts.config
-    this.features = opts.features
+    this.data = opts.data
   }
 
-  search (address) {
-    return search(this, address)
+  search (query) {
+    return search(this, query)
   }
 }
 
