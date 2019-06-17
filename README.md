@@ -1,4 +1,4 @@
-# :cadastre:
+# cadaster
 
 > Geocoding and company
 
@@ -12,10 +12,10 @@ Following steps should derive to full development installation
 
 ```sh
 # Clone this repo
-git clone https://github.com/cadastre/cadastre
+git clone https://github.com/cadaster/cadaster
 
 # Go to repo directory
-cd cadastre
+cd cadaster
 
 # Install root dependencies
 npm install

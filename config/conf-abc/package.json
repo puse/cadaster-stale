@@ -1,15 +1,15 @@
 {
-  "name": "@cadastre/conf-abc",
+  "name": "@cadaster/conf-abc",
   "version": "0.0.0",
   "private": true,
   "description": "A sample config package",
   "author": "Miro <miro.ter.seri@gmail.com>",
-  "homepage": "https://github.com/cadastre/cadastre/tree/master/packages/conf-abc",
+  "homepage": "https://github.com/cadaster/cadaster/tree/master/packages/conf-abc",
   "license": "MIT",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cadastre/cadastre.git"
+    "url": "git+https://github.com/cadaster/cadaster.git"
   },
   "scripts": {
     "test": "ava --verbose --color",
@@ -17,7 +17,7 @@
     "test:watch": "ava -vw"
   },
   "bugs": {
-    "url": "https://github.com/cadastre/cadastre/issues"
+    "url": "https://github.com/cadaster/cadaster/issues"
   },
   "devDependencies": {
     "ava": "^2.0.0",

@@ -7,5 +7,5 @@
 ### Installation
 
 ```sh
-npm install @cadastre/conf-abc
+npm install @cadaster/conf-abc
 ```

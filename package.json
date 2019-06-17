@@ -1,27 +1,27 @@
 {
-  "name": "@cadastre/cadastre",
+  "name": "@cadaster/cadaster",
   "version": "0.0.0",
   "private": true,
   "description": "Geocoding and co",
   "scripts": {
     "lint": "standard packages/*/lib/**/*.js",
-    "test": "lerna run test --concurrency 1 --stream --ignore @cadastre/cadastre-lab",
+    "test": "lerna run test --concurrency 1 --stream --ignore @cadaster/cadaster-lab",
     "test:coverage": "lerna run test:coverage --concurrency 1 --stream",
     "postinstall": "lerna bootstrap --hoist"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cadastre/cadastre.git"
+    "url": "git+https://github.com/cadaster/cadaster.git"
   },
   "keywords": [
-    "cadastre"
+    "cadaster"
   ],
   "author": "Miro Ter-Seri",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/cadastre/cadastre/issues"
+    "url": "https://github.com/cadaster/cadaster/issues"
   },
-  "homepage": "https://github.com/cadastre/cadastre#readme",
+  "homepage": "https://github.com/cadaster/cadaster#readme",
   "devDependencies": {
     "@commitlint/cli": "^8.0.0",
     "@commitlint/config-conventional": "^8.0.0",

@@ -7,13 +7,13 @@
 ### Installation
 
 ```sh
-npm install @cadastre/lib-xxx
+npm install @cadaster/lib-xxx
 ```
 
 ### Usage
 
 ```js
-const xxx = require('@cadastre/lib-xxx')
+const xxx = require('@cadaster/lib-xxx')
 
 // TODO: DEMONSTRATE API
 ```
